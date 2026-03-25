@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J K Viswas — Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="#hero">
+        <h1 class="logo">
+          &lt;<span>JKV</span>/&gt;
+        </h1>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#portfolio" class="nav-link" data-section="portfolio">Projects</a></li>
+        <li><a href="#stats" class="nav-link" data-section="stats">Stats</a></li>
+        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>  
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">Available for Opportunities</div>
+      <div class="hero-image-wrap reveal-up delay-1">
+        <div class="hero-img-glow"></div>
+        <img
+          src="https://i.ibb.co/dJ4bNS11/myphoto.jpg"
+          alt="J K Viswas"
+          class="hero-img"
+          loading="eager"
+        />
+        <div class="hero-img-ring"></div>
+      </div>
+      <h1 class="hero-name reveal-up delay-2">J K <span class="glow-name">Viswas</span></h1>
+      <p class="hero-title reveal-up delay-3">Computer Science Student &amp; Developer</p>
+      <div class="hero-typing reveal-up delay-4">
+        I am a&nbsp;<span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+      </div>
+      <p class="hero-tagline reveal-up delay-5">
+        I build innovative software, solve complex problems,<br class="hide-mobile" /> and explore cutting-edge technologies.
+      </p>
+      <div class="hero-btns reveal-up delay-5">
+        <a href="#portfolio" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="cv.pdf" class="btn btn-outline" download="JK_Viswas_Resume.pdf">
+          <span>Download Resume</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>
+      </div>
+      <div class="hero-socials reveal-up delay-5">
+        <a href="https://github.com/jkvviswas" target="_blank" rel="noopener" class="hero-social-link" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/viswas-j-k-41864a377/" target="_blank" rel="noopener" class="hero-social-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://x.com/JViswas6941" target="_blank" rel="noopener" class="hero-social-link" title="Twitter/X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.857L1.254 2.25H8.08l4.266 5.64L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/viswas_jk/" target="_blank" rel="noopener" class="hero-social-link" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Get To Know Me</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-col reveal-left">
+          <div class="about-img-wrapper">
+            <img
+              src="https://i.ibb.co/LXcZKHm3/aboutme.jpg"
+              alt="Developer at work"
+              class="about-img"
+              loading="lazy"
+            />
+            <div class="about-img-border"></div>
+            <div class="about-img-dot about-dot-1"></div>
+            <div class="about-img-dot about-dot-2"></div>
+            <div class="about-tag about-tag-1">
+              <span class="about-tag-icon">🎓</span>
+              <div>
+                <span class="about-tag-label">Education</span>
+                <span class="about-tag-val">VIT, Vellore</span>
+              </div>
+            </div>
+            <div class="about-tag about-tag-2">
+              <span class="about-tag-icon">📍</span>
+              <div>
+                <span class="about-tag-label">Location</span>
+                <span class="about-tag-val">Chennai, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text-col reveal-right">
+          <p class="about-bio">
+            I'm J K Viswas, a passionate developer and tech enthusiast currently pursuing my education at VIT, Vellore. Born on June 14, 2007, I've been fascinated by technology from a young age and have dedicated myself to mastering programming and software development.
+          </p>
+          <p class="about-bio">
+            I am also a member of the <strong class="accent">Mozilla Firefox Club at VIT</strong>, actively engaging in tech communities and collaborative learning.
+          </p>
+          <div class="about-info-grid">
+            <div class="about-info-item">
+              <span class="about-info-label">Date of Birth</span>
+              <span class="about-info-val">June 14, 2007</span>
+            </div>
+            <div class="about-info-item">
+              <span class="about-info-label">Email</span>
+              <span class="about-info-val">jkv.viswas@gmail.com</span>
+            </div>
+            <div class="about-info-item">
+              <span class="about-info-label">Phone</span>
+              <span class="about-info-val">+91 9840043310</span>
+            </div>
+            <div class="about-info-item">
+              <span class="about-info-label">Location</span>
+              <span class="about-info-val">Chennai, Tamil Nadu</span>
+            </div>
+          </div>
+          <div class="about-expertise-grid">
+            <div class="about-expertise-card">
+            <div class="ae-header">
+              <span class="ae-icon">⚡</span>
+              <span class="ae-title">Expertise</span>
+            </div>
+            <ul class="ae-list">
+              <li>Full-stack Web (HTML, CSS, JS, React, Three.js)</li>
+              <li>Backend: Python, Node.js</li>
+              <li>Databases: MySQL, MongoDB, Supabase</li>
+              <li>Cybersecurity (BB84 Quantum Protocol)</li>
+            </ul>
+          </div>
+
+          <div class="about-expertise-card">
+            <div class="ae-header">
+              <span class="ae-icon">🔭</span>
+              <span class="ae-title">Interests</span>
+            </div>
+            <ul class="ae-list">
+              <li>AI & Emerging Technologies</li>
+              <li>Open-source Contributions</li>
+              <li>Continuous Learning & Research</li>
+              <li>Tech Communities & Collaboration</li>
+            </ul>
+          </div>
+          </div>
+            <div class="about-edu">
+              <div class="edu-card">
+                <div class="edu-icon">🎓</div>
+                <div>
+                  <div class="edu-degree">B.Tech Computer Science Core</div>
+                  <div class="edu-school">Vellore Institute of Technology, Vellore · 2025–2029</div>
+                </div>
+              </div>
+              <div class="edu-card">
+                <div class="edu-icon">📊</div>
+                <div>
+                  <div class="edu-degree">Minor: Data Science</div>
+                  <div class="edu-school">IIT Madras Online Degree</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ===== EDUCATION TIMELINE ===== -->
+<section class="section timeline-section" id="education">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Academic Path</span>
+      <h2 class="section-title">My <span class="accent">Education</span></h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal-up delay-1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2010 – 2025</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🏫</div>
+          <h3 class="timeline-title">School Education</h3>
+          <p class="timeline-org">Chettinad Vidyashram, Chennai</p>
+          <p class="timeline-desc">Completed primary and secondary schooling with a strong foundation in Biology and Mathematics, nurturing an early interest in computers and technology.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up delay-2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025 – 2029</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🎓</div>
+          <h3 class="timeline-title">B.Tech Computer Science</h3>
+          <p class="timeline-org">Vellore Institute of Technology, Vellore</p>
+          <p class="timeline-desc">Pursuing a Bachelor of Technology in Computer Science Core, exploring algorithms, systems design, full-stack development, and emerging technologies.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">Computer Science</span>
+            <span class="tl-tag">VIT Vellore</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up delay-3">
+        <div class="timeline-dot timeline-dot-blue"></div>
+        <div class="timeline-date">Parallel</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">📊</div>
+          <h3 class="timeline-title">Data Science Minor Degree</h3>
+          <p class="timeline-org">IIT Madras Online Degree</p>
+          <p class="timeline-desc">Pursuing an online Data Science degree from IIT Madras in parallel, strengthening skills in statistics, machine learning, and data analytics.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">Data Science</span>
+            <span class="tl-tag">IIT Madras</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ===== LEARNING JOURNEY TIMELINE ===== -->
+<section class="section timeline-section timeline-section-alt" id="journey">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-label">Growth Over Time</span>
+      <h2 class="section-title">Learning <span class="accent">Journey</span></h2>
+    </div>
+    <div class="timeline timeline-right">
+
+      <div class="timeline-item reveal-up delay-1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2023</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🌐</div>
+          <h3 class="timeline-title">Started Web Development</h3>
+          <p class="timeline-desc">Began the journey into web development, building foundational skills in markup, styling, and interactivity from the ground up.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">HTML</span>
+            <span class="tl-tag">CSS</span>
+            <span class="tl-tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up delay-2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">April 2024</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">⚛️</div>
+          <h3 class="timeline-title">Frontend Frameworks & React</h3>
+          <p class="timeline-desc">Levelled up into modern frontend ecosystems, mastering component-based architecture, state management, and module bundling.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">React</span>
+            <span class="tl-tag">Redux</span>
+            <span class="tl-tag">Webpack</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up delay-3">
+        <div class="timeline-dot timeline-dot-blue"></div>
+        <div class="timeline-date">November 2024</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🔐</div>
+          <h3 class="timeline-title">Cybersecurity & Advanced Topics</h3>
+          <p class="timeline-desc">Dived deep into network security, quantum cryptography (BB84 protocol), and Linux system internals — bridging software and security.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">Cybersecurity</span>
+            <span class="tl-tag">Quantum BB84</span>
+            <span class="tl-tag">Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up delay-4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">☁️</div>
+          <h3 class="timeline-title">Full Stack & Cloud</h3>
+          <p class="timeline-desc">Expanded into full-stack development and cloud infrastructure, building scalable backends and deploying on cloud platforms.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">Node.js</span>
+            <span class="tl-tag">AWS</span>
+            <span class="tl-tag">MongoDB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up delay-5">
+        <div class="timeline-dot timeline-dot-blue"></div>
+        <div class="timeline-date">2025</div>
+        <div class="timeline-card">
+          <div class="timeline-icon">🎨</div>
+          <h3 class="timeline-title">Meta Certification & Advanced Graphics</h3>
+          <p class="timeline-desc">Achieved Meta certification and ventured into 3D graphics, progressive web apps, and GPU-accelerated rendering on the web.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">Three.js</span>
+            <span class="tl-tag">WebGL</span>
+            <span class="tl-tag">PWA</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">What I Know</span>
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category reveal-up delay-1">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🌐</span>
+            <span>Frontend</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item" data-percent="88">
+              <div class="skill-bar-label"><span>HTML</span><span class="skill-pct">88%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="82">
+              <div class="skill-bar-label"><span>CSS</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="78">
+              <div class="skill-bar-label"><span>JavaScript</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="65">
+              <div class="skill-bar-label"><span>React</span><span class="skill-pct">65%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal-up delay-2">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">⚙️</span>
+            <span>Backend</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item" data-percent="80">
+              <div class="skill-bar-label"><span>Python</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="70">
+              <div class="skill-bar-label"><span>Node.js</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal-up delay-3">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🗄️</span>
+            <span>Database</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item" data-percent="72">
+              <div class="skill-bar-label"><span>MySQL</span><span class="skill-pct">72%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="65">
+              <div class="skill-bar-label"><span>MongoDB</span><span class="skill-pct">65%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category reveal-up delay-4">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">☁️</span>
+            <span>Cloud</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item" data-percent="70">
+              <div class="skill-bar-label"><span>Firebase</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-item" data-percent="55">
+              <div class="skill-bar-label"><span>AWS</span><span class="skill-pct">55%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO SECTION ===== -->
+  <section class="section portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">What I've Built</span>
+        <h2 class="section-title">My <span class="accent">Projects</span></h2>
+      </div>
+      <div class="portfolio-grid">
+
+        <div class="project-card reveal-up delay-1">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=360&fit=crop" alt="IRC System" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/jkvviswas/Viswas-IRC.git" target="_blank" rel="noopener" class="project-overlay-btn">View on GitHub</a>
+            </div>
+            <div class="project-tag">Networking</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">IRC System</h3>
+            <p class="project-desc">A real-time Internet Relay Chat system enabling multi-user communication channels with custom protocol handling and room management.</p>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Networking</span>
+              </div>
+              <a href="https://github.com/jkvviswas/Viswas-IRC.git" target="_blank" rel="noopener" class="project-github-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-2">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=360&fit=crop" alt="Event Registration Portal" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/jkvviswas/Viswas-Event-Registration-Portal.git" target="_blank" rel="noopener" class="project-overlay-btn">View on GitHub</a>
+            </div>
+            <div class="project-tag">Web App</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Event Registration Portal</h3>
+            <p class="project-desc">A full-featured event management portal that handles user registrations, schedules, confirmation emails, and admin dashboard for event organizers.</p>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-badge">HTML/CSS</span>
+                <span class="tech-badge">JavaScript</span>
+              </div>
+              <a href="https://github.com/jkvviswas/Viswas-Event-Registration-Portal.git" target="_blank" rel="noopener" class="project-github-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-3">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=360&fit=crop" alt="Personal Locker API" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/jkvviswas/Viswas-Personal-Locker-API---Backend.git" target="_blank" rel="noopener" class="project-overlay-btn">View on GitHub</a>
+            </div>
+            <div class="project-tag">Backend API</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Personal Locker API</h3>
+            <p class="project-desc">A secure RESTful backend API for storing and retrieving personal credentials and sensitive data with encrypted storage and JWT authentication.</p>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">REST API</span>
+              </div>
+              <a href="https://github.com/jkvviswas/Viswas-Personal-Locker-API---Backend.git" target="_blank" rel="noopener" class="project-github-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-1">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&h=360&fit=crop" alt="Rock Paper Scissors" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/jkvviswas/Viswas-RPS-System.git" target="_blank" rel="noopener" class="project-overlay-btn">View on GitHub</a>
+            </div>
+            <div class="project-tag">Game</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Rock Paper Scissors</h3>
+            <p class="project-desc">An interactive Rock Paper Scissors game system with AI opponent, score tracking, animated gameplay, and multiple difficulty levels.</p>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Logic AI</span>
+              </div>
+              <a href="https://github.com/jkvviswas/Viswas-RPS-System.git" target="_blank" rel="noopener" class="project-github-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-2">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=360&fit=crop" alt="Firewall Simulator" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/jkvviswas/Viswas-FireWall-Simulator.git" target="_blank" rel="noopener" class="project-overlay-btn">View on GitHub</a>
+            </div>
+            <div class="project-tag">Security</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Firewall Simulator</h3>
+            <p class="project-desc">A network security simulation tool that models firewall rule engines, packet filtering, IP blocking, and intrusion detection in a controlled environment.</p>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Security</span>
+              </div>
+              <a href="https://github.com/jkvviswas/Viswas-FireWall-Simulator.git" target="_blank" rel="noopener" class="project-github-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-3">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=360&fit=crop" alt="L-System Fractal Architect" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/jkvviswas/Viswas-L-System-Fractal-Architect.git" target="_blank" rel="noopener" class="project-overlay-btn">View on GitHub</a>
+            </div>
+            <div class="project-tag">Generative</div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">L-System Fractal Architect</h3>
+            <p class="project-desc">A generative art engine using Lindenmayer Systems to create procedural fractal structures, plant models, and geometric patterns with customizable rules.</p>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Graphics</span>
+              </div>
+              <a href="https://github.com/jkvviswas/Viswas-L-System-Fractal-Architect.git" target="_blank" rel="noopener" class="project-github-btn" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS SECTION ===== -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal-up delay-1">
+          <div class="stat-number" data-target="7">0</div>
+          <div class="stat-label">Projects Completed</div>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card reveal-up delay-2">
+          <div class="stat-number" data-target="100">0</div>
+          <div class="stat-label">Ideas Generated</div>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card reveal-up delay-3">
+          <div class="stat-number" data-target="700">0</div>
+          <div class="stat-label">Coffee Cups ☕</div>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card reveal-up delay-4">
+          <div class="stat-number" data-target="1200">0</div>
+          <div class="stat-label">Hours Coding</div>
+          <div class="stat-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL MEDIA SECTION ===== -->
+  <section class="section social-section" id="social">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Stay Connected</span>
+        <h2 class="section-title">Find Me <span class="accent">Online</span></h2>
+      </div>
+      <div class="social-grid">
+        <a href="https://www.linkedin.com/in/viswas-j-k-41864a377/" target="_blank" rel="noopener" class="social-card linkedin reveal-up delay-1">
+          <div class="social-emoji">🔗</div>
+          <div class="social-name">LinkedIn</div>
+          <div class="social-handle">@viswas-j-k</div>
+          <div class="social-arrow">→</div>
+        </a>
+        <a href="https://x.com/JViswas6941" target="_blank" rel="noopener" class="social-card twitter reveal-up delay-2">
+          <div class="social-emoji">🐦</div>
+          <div class="social-name">Twitter / X</div>
+          <div class="social-handle">@JViswas6941</div>
+          <div class="social-arrow">→</div>
+        </a>
+        <a href="https://github.com/jkvviswas" target="_blank" rel="noopener" class="social-card github reveal-up delay-3">
+          <div class="social-emoji">💻</div>
+          <div class="social-name">GitHub</div>
+          <div class="social-handle">@jkvviswas</div>
+          <div class="social-arrow">→</div>
+        </a>
+        <a href="https://www.instagram.com/viswas_jk/" target="_blank" rel="noopener" class="social-card instagram reveal-up delay-4">
+          <div class="social-emoji">📸</div>
+          <div class="social-name">Instagram</div>
+          <div class="social-handle">@viswas_jk</div>
+          <div class="social-arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===== SERVICES SECTION ===== -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">What I Offer</span>
+        <h2 class="section-title">What Can I Do <span class="accent">For You?</span></h2>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card reveal-up delay-1">
+          <div class="service-icon-wrap">
+            <span class="service-icon">🎨</span>
+          </div>
+          <h3 class="service-title">Web Design</h3>
+          <p class="service-desc">Crafting visually stunning, user-centric website designs with modern aesthetics, intuitive layouts, and pixel-perfect attention to detail.</p>
+          <div class="service-shine"></div>
+        </div>
+
+        <div class="service-card reveal-up delay-2">
+          <div class="service-icon-wrap">
+            <span class="service-icon">💻</span>
+          </div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">Building robust, scalable web applications using modern stacks — from responsive frontends to powerful APIs and cloud-connected backends.</p>
+          <div class="service-shine"></div>
+        </div>
+
+        <div class="service-card reveal-up delay-3">
+          <div class="service-icon-wrap">
+            <span class="service-icon">🖥️</span>
+          </div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">Designing intuitive user experiences and clean interfaces grounded in usability principles, interaction design, and user research.</p>
+          <div class="service-shine"></div>
+        </div>
+
+        <div class="service-card reveal-up delay-1">
+          <div class="service-icon-wrap">
+            <span class="service-icon">✨</span>
+          </div>
+          <h3 class="service-title">Branding</h3>
+          <p class="service-desc">Developing cohesive brand identities — logos, color systems, typography, and visual language that communicate your unique story.</p>
+          <div class="service-shine"></div>
+        </div>
+
+        <div class="service-card reveal-up delay-2">
+          <div class="service-icon-wrap">
+            <span class="service-icon">🖌️</span>
+          </div>
+          <h3 class="service-title">Graphics Design</h3>
+          <p class="service-desc">Creating high-impact visual assets — banners, social graphics, illustrations, and marketing materials that capture attention instantly.</p>
+          <div class="service-shine"></div>
+        </div>
+
+        <div class="service-card reveal-up delay-3">
+          <div class="service-icon-wrap">
+            <span class="service-icon">🚀</span>
+          </div>
+          <h3 class="service-title">Consultancy</h3>
+          <p class="service-desc">Providing strategic technical guidance on architecture decisions, technology selection, performance optimisation, and project roadmaps.</p>
+          <div class="service-shine"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3 class="contact-info-title">Let's work together</h3>
+          <p class="contact-info-text">I'm currently open to internships, freelance projects, and collaboration opportunities. Feel free to reach out!</p>
+          <div class="contact-info-items">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📧</div>
+              <div>
+                <div class="contact-info-label">Email</div>
+                <div class="contact-info-val">jkv.viswas@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📱</div>
+              <div>
+                <div class="contact-info-label">Phone</div>
+                <div class="contact-info-val">+91 9840043310</div>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">📍</div>
+              <div>
+                <div class="contact-info-label">Address</div>
+                <div class="contact-info-val">Chellapas BlueCoast Apartment, 
+                ECR, Kanathur, 
+                Chennai - 603112</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" name="name" placeholder="John Doe" required autocomplete="off" />
+              <span class="form-bar"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required autocomplete="off" />
+              <span class="form-bar"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactMsg">Message</label>
+              <textarea id="contactMsg" name="message" rows="5" placeholder="Hello Viswas, I'd love to connect..." required></textarea>
+              <span class="form-bar"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" style="display:none;">Sending…</span>
+              <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess" style="display:none;">
+              ✅ Message sent! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>JKV<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-copy">© 2025 J K Viswas · Crafted with ❤️ &amp; ☕ in Chennai</p>
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 15l7-7 7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
