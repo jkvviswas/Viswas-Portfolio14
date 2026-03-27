@@ -1480,3 +1480,8 @@ body:has(button:hover) .cursor-dot {
                  0 0 40px #ff0055;
   }
 }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start; /* 🔥 THIS FIXES IT */
+}
